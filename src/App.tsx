@@ -9,7 +9,7 @@ import ContactSection from './components/ContactSection';
 function App() {
   useEffect(() => {
     // Update document title
-    document.title = "Andrej Karpathy - AI Researcher & Engineer";
+    document.title = "AK - Backend Developer";
 
     // Add smooth scrolling to all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
+import { SiLeetcode } from 'react-icons/si';
 
 interface NavItem {
   label: string;
@@ -47,41 +48,50 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-4">
-          <a href="#home" className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
-            A.K
-          </a>
+  <div className="flex items-center justify-between py-4">
+    <a href="#home" className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
+      A K
+    </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-            <ThemeToggle />
-          </nav>
+    {/* Desktop Navigation */}
+    <nav className="hidden md:flex items-center space-x-8">
+      <a
+        href="https://leetcode.com/u/akshay050904/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center"
+      >
+        <SiLeetcode className="mr-1" /> LeetCode
+      </a>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden">
-            <ThemeToggle />
-            <button
-              className="ml-2 p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
+      {navItems.map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(item.href);
+          }}
+          className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+      <ThemeToggle />
+    </nav>
+
+    {/* Mobile Menu Button */}
+    <div className="flex items-center md:hidden">
+      <ThemeToggle />
+      <button
+        className="ml-2 p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
+  </div>
+</div>
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (

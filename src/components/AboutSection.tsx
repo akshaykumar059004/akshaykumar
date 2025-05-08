@@ -1,6 +1,8 @@
 import React from 'react';
 import { bioData } from '../data/portfolioData';
 
+
+
 const AboutSection: React.FC = () => {
   return (
     <section 
@@ -23,8 +25,7 @@ const AboutSection: React.FC = () => {
                 </p>
               ))}
             </div>
-          </div>
-          
+          </div>          
           <div className="lg:w-1/3">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
               Experience
@@ -35,9 +36,12 @@ const AboutSection: React.FC = () => {
                   <h4 className="text-lg font-medium text-gray-900 dark:text-white">
                     {exp.title}
                   </h4>
-                  <p className="text-sm text-blue-600 dark:text-blue-400 mb-1">
-                    {exp.company} | {exp.period}
-                  </p>
+                  <a href={'https://www.pradan.net/'} className="text-sm text-blue-600 dark:text-blue-400 mb-1" target="_blank" rel="noopener noreferrer">
+                        {exp.company}<span className="ml-1">🔗</span>
+                  </a>
+                  <a> | {exp.period}</a>
+                  
+
                   <p className="text-gray-600 dark:text-gray-400">
                     {exp.description}
                   </p>

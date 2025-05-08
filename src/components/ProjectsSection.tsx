@@ -14,7 +14,7 @@ const ProjectsSection: React.FC = () => {
             Projects & Research
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-            A collection of my work in artificial intelligence, machine learning, and neural networks.
+            A collection of my work in machine learning, backend and neural networks.
           </p>
         </div>
         
